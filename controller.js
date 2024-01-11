@@ -12,9 +12,8 @@ exports.getAllUsers = async (req, res) => {
 
 exports.createUser = async (req, res) => {
   try {
-    const user = new User(req.body);
-    await user.save();
-    res.status(201).json(user);
+    console.log(req.body);
+    res.status(200).json(req.body);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
